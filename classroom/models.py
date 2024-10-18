@@ -153,3 +153,10 @@ class Students(models.Model):
         verbose_name = 'Student'
         verbose_name_plural = 'Students' 
 
+class Comments(models.Model):
+    question = models.ForeignKey(Questions, on_delete=models.CASCADE)
+    commentText = models.TextField()
+    student = models.ForeignKey(Students, on_delete=models.CASCADE)
+    teacher = models.ForeignKey(Teachers, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    display_fields = ['question','commentText','student','teacher','created_at']

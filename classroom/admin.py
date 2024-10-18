@@ -39,3 +39,7 @@ class AnswersAdmin(admin.ModelAdmin):
 @admin.register(Students)
 class StudentsAdmin(admin.ModelAdmin):
     list_display = Students.display_fields
+
+@admin.register(Comments)
+class CommentsAdmin(admin.ModelAdmin):
+    list_display = Comments.display_fields
